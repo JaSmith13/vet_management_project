@@ -1,6 +1,7 @@
 from db.run_sql import run_sql
 from models.vet import Vet
 
+#Read all
 def select_all():
     vets = []
     sql = "SELECT * FROM vets"
@@ -11,6 +12,7 @@ def select_all():
         vets.append(vet)
     return vets
 
+#Read one
 def select(id):
     vet = None
     sql = "SELECT * FROM vets WHERE id = %s"
@@ -21,11 +23,17 @@ def select(id):
         vet = Vet(result['first_name'], result['last_name'], result['qualifications'], result['contact_number'], result['id'])
     return vet
 
+#Delete all
 def delete_all():
     sql = "DELETE FROM vets"
     run_sql(sql)
 
+#Delete one
 def delete(id):
     sql = "DELETE FROM vets WHERE id = %s"
     values = [id]
     run_sql(sql, values)
+
+#Create
+
+#Update
