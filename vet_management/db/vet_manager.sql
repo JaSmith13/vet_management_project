@@ -19,3 +19,11 @@ CREATE TABLE vets(
     contact_number VARCHAR(255)
 );
 
+INSERT INTO vets (first_name, last_name, qualifications, contact_number)
+VALUES ('Aileen', 'Matthews', 'MRCVS', '07865 123456');
+
+INSERT INTO vets (first_name, last_name, qualifications, contact_number)
+VALUES ('Roland', 'Walters', 'FRCVS', '01234 987654');
+
+INSERT INTO vets (first_name, last_name, qualifications, contact_number)
+VALUES ('Rachel', 'Mcfarlane', 'MRCVS', '07531 246810');
