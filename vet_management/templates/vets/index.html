@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% for vet in vets %}
+    <section>
+        <p><h3>{{vet.first_name}} {{vet.last_name}} {{vet.qualifications}}</h3></p>
+        <p>{{vet.contact_number}}</p>
+    </section>
+    {% endfor %}
+{% endblock %}
