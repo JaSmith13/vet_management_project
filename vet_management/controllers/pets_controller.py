@@ -44,9 +44,19 @@ def edit_pet(id):
     return render_template("pets/edit.html", pet = pet, vets = vets)
 
 # #UPDATE
-# @pets_blueprint.route("/pets/<id>", methods=['POST'])
-# def update_pet_details(id):
-#     pass
+@pets_blueprint.route("/pets/<id>", methods=['POST'])
+def update_pet_details(id):
+    name = request.form["name"]
+    date_of_birth = request.form["date_of_birth"]
+    breed = request.form["breed"]
+    owner_contact_number = request.form["owner_contact_number"]
+    treatment_notes = request.form["treatment_notes"]
+    vet = vet_repository.select(request.form["vet_id"])
+
+    pet = Pet(name, date_of_birth, breed, owner_contact_number, treatment_notes, vet, id)
+    pet_repository.update(pet)
+
+    return redirect("/pets")
 
 
 #DELETE
