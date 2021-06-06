@@ -16,10 +16,10 @@ def single_pet_records(id):
     return render_template("pets/show.html", pet = pet)
 
 #NEW
-# @pets_blueprint("/pets/new", methods=['GET'])
-# def new_pet():
-#     vets = vet_repository.select_all()
-#     return render_template("pets/new.html", vets = vets)
+@pets_blueprint.route("/pets/new", methods=['GET'])
+def new_pet():
+    vets = vet_repository.select_all()
+    return render_template("pets/new.html", vets = vets)
 
 # #CREATE
 # @pets_blueprint.route("/pets", methods=['POST'])
