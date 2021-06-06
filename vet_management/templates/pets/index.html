@@ -10,6 +10,10 @@
         <p>treatment notes: {{pet.treatment_notes}}</p>
         <p>Attending vet: {{pet.vet.first_name}} {{pet.vet.last_name}}</p>
         <p>Contact no: {{pet.owner_contact_number}}</p>
+        <br>
+        <form action="/pets/{{pet.id}}/delete" method="POST">
+            <a onclick="this.parentNode.submit();">Delete</a></p>
+        </form>
         <hr>
     </section>
     {% endfor %}
