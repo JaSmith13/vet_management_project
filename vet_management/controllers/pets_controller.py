@@ -22,9 +22,19 @@ def new_pet():
     return render_template("pets/new.html", vets = vets)
 
 # #CREATE
-# @pets_blueprint.route("/pets", methods=['POST'])
-# def create_pet():
-#     pass
+@pets_blueprint.route("/pets", methods=['POST'])
+def create_pet():
+    name = request.form["name"]
+    date_of_birth = request.form["date_of_birth"]
+    breed = request.form["breed"]
+    owner_contact_number = request.form["owner_contact_number"]
+    treatment_notes = request.form["treatment_notes"]
+    vet = vet_repository.select(request.form["vet_id"])
+    
+    new_pet = Pet(name, date_of_birth, breed, owner_contact_number, treatment_notes, vet)
+    pet_repository.save(new_pet)
+
+    return redirect("/pets")
 
 # #EDIT
 # @pets_blueprint.route("/pets/<id>/edit", methods=['GET'])
