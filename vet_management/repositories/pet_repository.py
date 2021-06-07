@@ -2,7 +2,7 @@ import datetime
 from db.run_sql import run_sql
 from models.pet import Pet
 from models.vet import Vet
-from repositories import vet_repository
+from repositories import vet_repository, owner_repository
 
 #Read all
 def select_all():
@@ -12,7 +12,8 @@ def select_all():
 
     for row in results:
         vet = vet_repository.select(row['vet_id'])
-        pet = Pet(row['name'], (row['date_of_birth']).strftime("%d/%m/%Y"), row['breed'], row['owner_contact_number'], row['treatment_notes'], vet, row['id'])
+        owner = owner_repository.select(row['owner_id'])
+        pet = Pet(row['name'], (row['date_of_birth']).strftime("%d/%m/%Y"), row['breed'], owner, row['treatment_notes'], vet, row['id'])
         pets.append(pet)
     return pets
 
@@ -25,21 +26,22 @@ def select(id):
     
     if result is not None:
         vet = vet_repository.select(result['vet_id'])
-        pet = Pet(result['name'], (result['date_of_birth']).strftime("%d/%m/%Y"), result['breed'], result['owner_contact_number'], result['treatment_notes'], vet, result['id'])
+        owner = owner_repository.select(row['owner_id'])
+        pet = Pet(result['name'], (result['date_of_birth']).strftime("%d/%m/%Y"), result['breed'], owner, result['treatment_notes'], vet, result['id'])
     return pet
 
 #Create 
 def save(pet):
-    sql = "INSERT INTO pets (name, date_of_birth, breed, owner_contact_number, treatment_notes, vet_id) VALUES (%s, %s, %s, %s, %s, %s) RETURNING id"
-    values = [pet.name, pet.date_of_birth, pet.breed, pet.owner_contact_number, pet.treatment_notes, pet.vet.id]
+    sql = "INSERT INTO pets (name, date_of_birth, breed, owner_id, treatment_notes, vet_id) VALUES (%s, %s, %s, %s, %s, %s) RETURNING id"
+    values = [pet.name, pet.date_of_birth, pet.breed, pet.owner.id, pet.treatment_notes, pet.vet.id]
     results = run_sql(sql, values)
     id = results[0]['id']
     pet.id =id
 
 #Update
 def update(pet):
-    sql = "UPDATE pets SET (name, date_of_birth, breed, owner_contact_number, treatment_notes, vet_id) = (%s, %s, %s, %s, %s, %s) WHERE id = %s"
-    values = [pet.name, pet.date_of_birth, pet.breed, pet.owner_contact_number, pet.treatment_notes, pet.vet.id, pet.id]
+    sql = "UPDATE pets SET (name, date_of_birth, breed, owner_id, treatment_notes, vet_id) = (%s, %s, %s, %s, %s, %s) WHERE id = %s"
+    values = [pet.name, pet.date_of_birth, pet.breed, pet.owner.id, pet.treatment_notes, pet.vet.id, pet.id]
     run_sql(sql, values)
 
 #Delete all
