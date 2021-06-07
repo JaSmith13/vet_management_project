@@ -1,5 +1,66 @@
-header, footer{
-    background-color: aqua;
+body{
+    background-color: #EFEFEF;
+    margin: 0;    
 }
 
-html 
+header, footer{
+    background-color: #CAEBF2;    
+}
+
+header > p {
+    margin: 0px;
+}
+
+ul{
+    margin: 0px;
+}
+
+hgroup{
+    padding: 10px;
+}
+
+h1, h2{
+    margin: 0px;
+}
+
+nav{
+    background-color: #A9A9A9;
+    padding: 5px;
+}
+
+a{
+    text-decoration: none;
+    color: #FF3B3F;
+    padding: 10px;
+    display: block;
+}
+
+a:hover{
+    color: #5a191a;
+    transition-duration: 0.2s;
+}
+
+ul{
+    list-style-type: none;
+    display:flex;
+    justify-content:flex-start;
+}
+
+li > a{
+    color: #EFEFEF;
+    padding: 10px;
+}
+
+li > a:hover{
+    color: black;
+    transition-duration: 0.2s;
+}
+
+footer {
+text-align: center;
+padding: 10px;
+}
+
+h3{
+    margin: 0;
+}
