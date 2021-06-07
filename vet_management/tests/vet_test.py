@@ -15,7 +15,7 @@ class TestVet(unittest.TestCase):
         self.assertEqual('Matthews', self.vet1.last_name)
 
     def test_vet_has_qualifications(self):
-        self.assertEqual('MRCVS', self.vet1.qualfications)
+        self.assertEqual('MRCVS', self.vet1.qualifications)
 
     def test_vet_has_contact_number(self):
         self.assertEqual('07865 123456', self.vet1.contact_number)
