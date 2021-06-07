@@ -43,7 +43,7 @@ def save(owner):
     owner.id = id
 
 #Update
-def save(owner):
+def update(owner):
     sql = "UPDATE owners SET (first_name, last_name, contact_number, address, email) VALUES (%s, %s, %s, %s, %s) WHERE id = %s"
     values = [owner.first_name, owner.last_name, owner.contact_number, owner.address, owner.email, owner.id]
     run_sql(sql, values)
