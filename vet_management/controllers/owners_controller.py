@@ -15,3 +15,22 @@ def single_owner_records(id):
 def delete_owner(id):
     owner_repository.delete(id)
     return redirect("/pets")
+
+#NEW
+@owners_blueprint.route("/owners/new", methods=['GET'])
+def new_owner():
+    return render_template("owners/new.html")
+
+# #CREATE
+@owners_blueprint.route("/owners", methods=['POST'])
+def create_owner():
+    first_name = request.form["first_name"]
+    last_name = request.form["last_name"]
+    contact_number = request.form["contact_number"]
+    address = request.form["address"]
+    email = request.form["email"]
+    
+    new_owner = Owner(first_name, last_name, contact_number, address, email)
+    owner_repository.save(new_owner)
+
+    return redirect("/pets/new")
