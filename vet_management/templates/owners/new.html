@@ -1,0 +1,20 @@
+{% extends "base.html"%}
+
+{% block content %}
+<h3>Add a new owner</h3>
+
+<form action="/owners" method="POST">
+    <label for="first_name">First Name:</label>
+    <input type="text" name="first_name">
+    <label for="Last_name">Last Name:</label>
+    <input type="text" name="last_name">
+    <label for="contact_number">Contact no:</label>
+    <input type="text" name="contact_number">
+    <label for="address">Address:</label>
+    <textarea name="address" cols="30" rows="3"></textarea>
+    <label for="email">Email:</label>
+    <input type="text" name="email">
+    <input type="submit" value="submit">
+</form>
+    
+{% endblock %}
