@@ -10,6 +10,7 @@ def all_pets():
     pets = pet_repository.select_all()
     return render_template("pets/index.html", pets = pets)
 
+#SHOW
 @pets_blueprint.route("/pets/<id>", methods=['GET'])
 def single_pet_records(id):
     pet = pet_repository.select(id)
