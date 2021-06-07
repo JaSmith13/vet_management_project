@@ -36,9 +36,14 @@ def delete(id):
 
 #Create
 def save(owner):
-    sql = "INSERT INTO owners (first_name, last_name, contact_number, address, email) VALUES (%s, %s, %s, %s, %s, %s) RETURNING id"
+    sql = "INSERT INTO owners (first_name, last_name, contact_number, address, email) VALUES (%s, %s, %s, %s, %s) RETURNING id"
     values = [owner.first_name, owner.last_name, owner.contact_number, owner.address, owner.email]
     results = run_sql(sql, values)
     id = results[0]['id']
-    owner.id =id
+    owner.id = id
+
 #Update
+def save(owner):
+    sql = "UPDATE owners SET (first_name, last_name, contact_number, address, email) VALUES (%s, %s, %s, %s, %s) WHERE id = %s"
+    values = [owner.first_name, owner.last_name, owner.contact_number, owner.address, owner.email, owner.id]
+    run_sql(sql, values)
