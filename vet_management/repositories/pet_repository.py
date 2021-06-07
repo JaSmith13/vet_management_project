@@ -1,3 +1,4 @@
+import datetime
 from db.run_sql import run_sql
 from models.pet import Pet
 from models.vet import Vet
@@ -11,7 +12,7 @@ def select_all():
 
     for row in results:
         vet = vet_repository.select(row['vet_id'])
-        pet = Pet(row['name'], row['date_of_birth'], row['breed'], row['owner_contact_number'], row['treatment_notes'], vet, row['id'])
+        pet = Pet(row['name'], (row['date_of_birth']).strftime("%d/%m/%Y"), row['breed'], row['owner_contact_number'], row['treatment_notes'], vet, row['id'])
         pets.append(pet)
     return pets
 
@@ -24,7 +25,7 @@ def select(id):
     
     if result is not None:
         vet = vet_repository.select(result['vet_id'])
-        pet = Pet(result['name'], result['date_of_birth'], result['breed'], result['owner_contact_number'], result['treatment_notes'], vet, result['id'])
+        pet = Pet(result['name'], (result['date_of_birth']).strftime("%d/%m/%Y"), result['breed'], result['owner_contact_number'], result['treatment_notes'], vet, result['id'])
     return pet
 
 #Create 
