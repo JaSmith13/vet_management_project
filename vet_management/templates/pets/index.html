@@ -13,7 +13,9 @@
         <a href="/owners/{{pet.owner.id}}">Owner Info</a>
         <br>
         <a href="/pets/{{pet.id}}">More Info</a>
+        <br>
         <a href="/pets/{{pet.id}}/edit">Edit this Info</a>
+        <br>
         <form action="/pets/{{pet.id}}/delete" method="POST">
             <a onclick="this.parentNode.submit();">Delete</a></p>
         </form>
