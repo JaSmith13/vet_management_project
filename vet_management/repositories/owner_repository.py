@@ -16,7 +16,7 @@ def select_all():
 def select(id):
     owner = None
     sql = "SELECT * FROM owners WHERE id = %s"
-    values =[id]
+    values = [id]
     result = run_sql(sql, values)[0]
     
     if result is not None:

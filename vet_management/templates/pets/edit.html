@@ -9,9 +9,9 @@
     <label for="breed">Breed:</label>
     <input type="text" name="breed" value="{{pet.breed}}">
     <label for="date_of_birth">DOB:</label>
-    <input type="date" name="date_of_birth" value="{{pet.date_of_birth}}">
+    <input type="date" name="date_of_birth" value="{{date}}">
     <label for="owner">Owner:</label>
-    <select name="vet_id"> 
+    <select name="owner_id"> 
         {% for owner in owners %}
         <option value="{{owner.id}}"{% if pet.owner.id == owner.id %} selected {% endif %}>
             {{owner.first_name}} {{owner.last_name}}
