@@ -26,7 +26,7 @@ def select(id):
     
     if result is not None:
         vet = vet_repository.select(result['vet_id'])
-        owner = owner_repository.select(row['owner_id'])
+        owner = owner_repository.select(result['owner_id'])
         pet = Pet(result['name'], (result['date_of_birth']).strftime("%d/%m/%Y"), result['breed'], owner, result['treatment_notes'], vet, result['id'])
     return pet
 

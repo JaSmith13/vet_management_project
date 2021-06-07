@@ -10,8 +10,14 @@
     <input type="text" name="breed" value="{{pet.breed}}">
     <label for="date_of_birth">DOB:</label>
     <input type="date" name="date_of_birth" value="{{pet.date_of_birth}}">
-    <label for="owner_contact_number">Owner contact no:</label>
-    <input type="text" name="owner_contact_number" value="{{pet.owner_contact_number}}">
+    <label for="owner">Owner:</label>
+    <select name="vet_id"> 
+        {% for owner in owners %}
+        <option value="{{owner.id}}"{% if pet.owner.id == owner.id %} selected {% endif %}>
+            {{owner.first_name}} {{owner.last_name}}
+        </option>
+        {% endfor %}
+    </select>
     <label for="treatment_notes">Treatment notes:</label>
     <textarea name="treatment_notes" cols="30" rows="3" >{{pet.treatment_notes}}</textarea>
     <label for="vet">Assigned vet:</label>

@@ -6,7 +6,7 @@
         <p>D.O.B: {{pet.date_of_birth}}</p>
         <p>treatment notes: {{pet.treatment_notes}}</p>
         <p>Attending vet: {{pet.vet.first_name}} {{pet.vet.last_name}}</p>
-        <p>Contact no: {{pet.owner_contact_number}}</p>
+        <p>Owner: {{pet.owner.first_name}} {{pet.owner.last_name}}</p>
         <br>
         <a href="/pets">Back to all pets</a>
         <form action="/pets/{{pet.id}}/delete" method="POST">

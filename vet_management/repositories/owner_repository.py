@@ -4,12 +4,12 @@ from models.owner import Owner
 #Read all
 def select_all():
     owners = []
-    sql = "SELECT * FROM vets"
+    sql = "SELECT * FROM owners"
     results = run_sql(sql)
 
     for row in results:
         owner = Owner(row['first_name'], row['last_name'], row['contact_number'], row['address'], row['email'], row['id'])
-        ownerds.append(owner)
+        owners.append(owner)
     return owners
 
 #Read one
@@ -20,7 +20,7 @@ def select(id):
     result = run_sql(sql, values)[0]
     
     if result is not None:
-        owner = Owner(row['first_name'], row['last_name'], row['contact_number'], row['address'], row['email'], row['id'])
+        owner = Owner(result['first_name'], result['last_name'], result['contact_number'], result['address'], result['email'], result['id'])
     return owner
 
 #Delete all
