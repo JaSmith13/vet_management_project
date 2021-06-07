@@ -10,8 +10,8 @@ from repositories import vet_repository, pet_repository
 #vet_repository.delete_all()
 #vets = vet_repository.select_all()
 
-pet1 = Pet('Sadie', '10/6/2020', 'scottie cross', '07833 474334', 'N/A', vet_repository.select(1))
-pet_repository.save(pet1)
+# pet1 = Pet('Sadie', '10/6/2020', 'scottie cross', '07833 474334', 'N/A', vet_repository.select(1))
+# pet_repository.save(pet1)
 # for vet in vets:
 #     print(vet.__dict__)
 
