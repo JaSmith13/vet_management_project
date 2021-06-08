@@ -35,5 +35,12 @@ def delete(id):
     run_sql(sql, values)
 
 #Create
+def save(vet):
+    sql = "INSERT INTO vets (first_name, last_name, qualifications, contact_number) VALUES (%s, %s, %s, %s) RETURNING id"
+    values = [vet.first_name, vet.last_name, vet.qualifications, vet.contact_number]
+    results = run_sql(sql, values)
+    id = results[0]['id']
+    vet.id = id
 
 #Update
+# def update(vet):

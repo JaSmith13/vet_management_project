@@ -26,10 +26,13 @@ from repositories import vet_repository, pet_repository, owner_repository
 #     print(pet.__dict__)
 #     print(pet.vet.first_name)
 
-owner1 = Owner('Bob', 'Barker', '01224 345678', '1 Wheel of fortune road', 'email@definitelyanemailclient.com')
-owner_repository.save(owner1)
+new_vet = Vet('Bob', 'Belcher', 'grill cook', '01224 643827')
+vet_repository.save(new_vet)
 
-owner1.first_name = 'Robert'
-owner_repository.update(owner1)
+# owner1 = Owner('Bob', 'Barker', '01224 345678', '1 Wheel of fortune road', 'email@definitelyanemailclient.com')
+# owner_repository.save(owner1)
+
+# owner1.first_name = 'Robert'
+# owner_repository.update(owner1)
 
 pdb.set_trace()
