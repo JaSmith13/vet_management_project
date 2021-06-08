@@ -30,10 +30,11 @@ nav{
 }
 
 a{
-    border: 3px solid #9E90FF;
+    border: 2px solid #9E90FF; 
+    border-radius: 15%;
     text-decoration: none;
     color: #9E90FF;
-    padding: 10px;
+    padding: 3px;
     /* display: block; */
 }
 
@@ -61,7 +62,7 @@ nav > ul > li > a:hover{
 
 .owners_pet_links{
     color: #9E90FF;
-    text-align: left;
+    /* text-align: left; */
 }
 
 footer {
@@ -87,5 +88,21 @@ h3{
 .links{
     display: flex;
     flex-direction: column;
-    justify-content:space-around;
+    justify-content: space-evenly;
+}
+
+#owners_pets_container{
+    display: flex;
+    flex-direction: column;
+    font-size: smaller;
+    padding: 5px; 
+}
+
+#owners_pets_container > li{
+    padding: 10px;
+}
+
+#owner_delete_warning{
+    font-size: smaller;
+    text-align: center;
 }
