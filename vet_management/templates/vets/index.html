@@ -10,7 +10,7 @@
             <p>Contact Number: {{vet.contact_number}}</p>
             {% if vet.is_active == False %} <p>ATTENTION: THIS VET IS NO LONGER ACTIVE</p> {% endif %}
         </div>
-        <div>
+        <div class="links">
             <a href="/vets/{{vet.id}}/edit"> Edit this info</a>
         </div>
     </section>

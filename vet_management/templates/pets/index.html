@@ -11,7 +11,7 @@
             <p>Attending vet: {{pet.vet.first_name}} {{pet.vet.last_name}} {% if pet.vet.is_active == False %} WARNING: This vet is currently unregistered, please reassign to an active vet {% endif %}</p>
             <p>owner: {{pet.owner.first_name}} {{pet.owner.last_name}}</p>
         </div>
-        <div>
+        <div class="links">
             <a href="/owners/{{pet.owner.id}}">Owner Info</a>
             <br>
             <a href="/pets/{{pet.id}}">More Info</a>

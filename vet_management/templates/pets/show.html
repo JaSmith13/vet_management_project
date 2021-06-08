@@ -9,7 +9,7 @@
             <p>Attending vet: {{pet.vet.first_name}} {{pet.vet.last_name}}</p>
             <p>Owner: {{pet.owner.first_name}} {{pet.owner.last_name}}</p>
         </div>
-        <div>
+        <div class="links">
             <a href="/pets">Back to all pets</a>
             <form action="/pets/{{pet.id}}/delete" method="POST">
                 <a onclick="this.parentNode.submit();">Delete</a></p>
