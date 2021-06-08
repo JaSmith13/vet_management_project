@@ -9,12 +9,14 @@
             <p>Attending vet: {{pet.vet.first_name}} {{pet.vet.last_name}}</p>
             <p>Owner: {{pet.owner.first_name}} {{pet.owner.last_name}}</p>
         </div>
-        <div class="links">
-            <a href="/pets">Back to all pets</a>
-            <form action="/pets/{{pet.id}}/delete" method="POST">
-                <a onclick="this.parentNode.submit();">Delete</a></p>
-            </form>
-        </div>        
+        <ul class="links">
+            <li><a href="/pets">Back to all pets</a></li>
+            <li>
+                <form action="/pets/{{pet.id}}/delete" method="POST">
+                    <a onclick="this.parentNode.submit();">Delete</a></p>
+                </form>
+            </li>
+        </ul>        
     </section>
     <hr>
 {% endblock %}

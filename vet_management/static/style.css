@@ -30,11 +30,11 @@ nav{
 }
 
 a{
-
+    border: 3px solid #9E90FF;
     text-decoration: none;
     color: #9E90FF;
     padding: 10px;
-    display: block;
+    /* display: block; */
 }
 
 a:hover{
@@ -48,14 +48,20 @@ ul{
     justify-content:flex-start;
 }
 
-li > a{
+nav > ul > li > a{
+    border: none;
     color: #EFEFEF;
     padding: 10px;
 }
 
-li > a:hover{
+nav > ul > li > a:hover{
     color: black;
     transition-duration: 0.2s;
+}
+
+.owners_pet_links{
+    color: #9E90FF;
+    text-align: left;
 }
 
 footer {
@@ -76,4 +82,10 @@ h3{
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: 1fr;
+}
+
+.links{
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
 }
