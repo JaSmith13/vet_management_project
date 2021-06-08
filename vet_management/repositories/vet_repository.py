@@ -8,7 +8,7 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        vet = Vet(row['first_name'], row['last_name'], row['qualifications'], row['contact_number'], row['id'])
+        vet = Vet(row['first_name'], row['last_name'], row['qualifications'], row['contact_number'], row['is_active'], row['id'])
         vets.append(vet)
     return vets
 
@@ -20,7 +20,7 @@ def select(id):
     result = run_sql(sql, values)[0]
     
     if result is not None:
-        vet = Vet(result['first_name'], result['last_name'], result['qualifications'], result['contact_number'], result['id'])
+        vet = Vet(result['first_name'], result['last_name'], result['qualifications'], result['contact_number'], result['is_active'], result['id'])
     return vet
 
 #Delete all
@@ -36,14 +36,14 @@ def delete(id):
 
 #Create
 def save(vet):
-    sql = "INSERT INTO vets (first_name, last_name, qualifications, contact_number) VALUES (%s, %s, %s, %s) RETURNING id"
-    values = [vet.first_name, vet.last_name, vet.qualifications, vet.contact_number]
+    sql = "INSERT INTO vets (first_name, last_name, qualifications, contact_number, is_active) VALUES (%s, %s, %s, %s, %s) RETURNING id"
+    values = [vet.first_name, vet.last_name, vet.qualifications, vet.contact_number, True]
     results = run_sql(sql, values)
     id = results[0]['id']
     vet.id = id
 
 #Update
 def update(vet):
-    sql = "UPDATE vets SET(first_name, last_name, qualifications, contact_number) = (%s, %s, %s, %s) WHERE id = %s"
-    values = [vet.first_name, vet.last_name, vet.qualifications, vet.contact_number, vet.id]
+    sql = "UPDATE vets SET(first_name, last_name, qualifications, contact_number, is_active) = (%s, %s, %s, %s, %s) WHERE id = %s"
+    values = [vet.first_name, vet.last_name, vet.qualifications, vet.contact_number, vet.is_active, vet.id]
     run_sql(sql, values)

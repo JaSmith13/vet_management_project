@@ -8,7 +8,7 @@ from repositories import vet_repository, pet_repository, owner_repository
 
 
 # pet_repository.delete_all()
-# vet_repository.delete_all()
+#vet_repository.delete_all()
 #owner_repository.delete_all()
 #vets = vet_repository.select_all()
 
@@ -38,9 +38,15 @@ from repositories import vet_repository, pet_repository, owner_repository
 # owner1.first_name = 'Robert'
 # owner_repository.update(owner1)
 
-owners_pets = owner_repository.all_owners_pets(owner_repository.select(1))
 
-for pet in owners_pets:
-    print(pet.__dict__)
+# owners_pets = owner_repository.all_owners_pets(owner_repository.select(1))
+
+# for pet in owners_pets:
+#     print(pet.vet.id)
+
+all_vets = vet_repository.select_all()
+for vet in all_vets:
+    if vet.is_active:
+        print('active')
 
 pdb.set_trace()

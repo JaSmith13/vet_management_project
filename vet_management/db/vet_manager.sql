@@ -7,7 +7,8 @@ CREATE TABLE vets(
     first_name VARCHAR(255),
     last_name VARCHAR(255),
     qualifications VARCHAR(255),
-    contact_number VARCHAR(255)
+    contact_number VARCHAR(255),
+    is_active BOOLEAN
 );
 
 CREATE TABLE owners(
@@ -29,14 +30,14 @@ CREATE TABLE pets(
     vet_id INT REFERENCES vets(id)
 );
 
-INSERT INTO vets (first_name, last_name, qualifications, contact_number)
-VALUES ('Aileen', 'Matthews', 'MRCVS', '07865 123456');
+INSERT INTO vets (first_name, last_name, qualifications, contact_number, is_active)
+VALUES ('Aileen', 'Matthews', 'MRCVS', '07865 123456', TRUE);
 
-INSERT INTO vets (first_name, last_name, qualifications, contact_number)
-VALUES ('Roland', 'Walters', 'FRCVS', '01234 987654');
+INSERT INTO vets (first_name, last_name, qualifications, contact_number, is_active)
+VALUES ('Roland', 'Walters', 'FRCVS', '01234 987654', FALSE);
 
-INSERT INTO vets (first_name, last_name, qualifications, contact_number)
-VALUES ('Rachel', 'Mcfarlane', 'MRCVS', '07531 246810');
+INSERT INTO vets (first_name, last_name, qualifications, contact_number, is_active)
+VALUES ('Rachel', 'Mcfarlane', 'MRCVS', '07531 246810', TRUE);
 
 INSERT INTO owners (first_name, last_name, contact_number, address, email)
 VALUES ('Daniel', 'Johnson', '07891 654321', 'deviltown', 'djohnson@gmail.com');
