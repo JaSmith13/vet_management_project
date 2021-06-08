@@ -35,3 +35,18 @@ def edit_vet(id):
     return render_template("vets/edit.html", vet = vet)
 
 #UPDATE
+@vets_blueprint.route("/vets/<id>", methods=['POST'])
+def update_vet_details(id):
+    #form inputs assigned to variables
+    first_name = request.form['first_name']
+    last_name = request.form['last_name']
+    qualifications = request.form['qualifications']
+    contact_number = request.form['contact_number']
+    #request.form.get('')for checkbox
+    is_active = True if request.form.get('active') else False
+    #vet = Vet(variables as arguments)
+    vet = Vet(first_name, last_name, qualifications, contact_number, is_active, id)
+    #vet_repo.update(vet)
+    vet_repository.update(vet)
+
+    return redirect("/vets")
