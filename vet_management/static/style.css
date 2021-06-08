@@ -88,7 +88,11 @@ h3{
 .links{
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: flex-end;
+}
+
+.links > li{
+    padding-bottom: 15px;
 }
 
 #owners_pets_container{
