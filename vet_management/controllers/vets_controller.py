@@ -16,6 +16,17 @@ def new_vet():
     return render_template("vets/new.html")
 
 #CREATE
+@vets_blueprint.route("/vets", methods=['POST'])
+def create_vet():
+    first_name = request.form["first_name"]
+    last_name = request.form["last_name"]
+    qualifications = request.form["qualifications"]
+    contact_number = request.form["contact_number"]
+
+    new_vet = Vet(first_name, last_name, qualifications, contact_number, True)
+    vet_repository.save(new_vet)
+
+    return redirect("/vets")
 
 #EDIT
 @vets_blueprint.route("/vets/<id>/edit", methods=['GET'])

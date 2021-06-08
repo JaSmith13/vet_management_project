@@ -5,10 +5,10 @@
     <h3>Our Vets</h3>
     {% for vet in vets %}
     <section {% if vet.is_active == False %} class="inactive_vet" {% endif %}>
-        <p>{{vet.is_active}}</p>
         <p><h4>{{vet.first_name}} {{vet.last_name}} {{vet.qualifications}}</h4></p>
         <p>Contact Number: {{vet.contact_number}}</p>
         {% if vet.is_active == False %} <p>ATTENTION: THIS VET IS NO LONGER ACTIVE</p> {% endif %}
     </section>
     {% endfor %}
+    <a href="/vets/new">Add new vet</a>
 {% endblock %}
