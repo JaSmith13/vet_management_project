@@ -4,12 +4,17 @@
 {% block content %}
     <h3>Our Vets</h3>
     {% for vet in vets %}
-    <section {% if vet.is_active == False %} class="inactive_vet" {% endif %}>
-        <p><h4>{{vet.first_name}} {{vet.last_name}} {{vet.qualifications}}</h4></p>
-        <p>Contact Number: {{vet.contact_number}}</p>
-        {% if vet.is_active == False %} <p>ATTENTION: THIS VET IS NO LONGER ACTIVE</p> {% endif %}
-        <a href="/vets/{{vet.id}}/edit"> Edit this info</a>
+    <section class="info {% if vet.is_active == False %} inactive_vet {% endif %}">
+        <div>
+            <p><h4>{{vet.first_name}} {{vet.last_name}} {{vet.qualifications}}</h4></p>
+            <p>Contact Number: {{vet.contact_number}}</p>
+            {% if vet.is_active == False %} <p>ATTENTION: THIS VET IS NO LONGER ACTIVE</p> {% endif %}
+        </div>
+        <div>
+            <a href="/vets/{{vet.id}}/edit"> Edit this info</a>
+        </div>
     </section>
+    <hr>
     {% endfor %}
     <a href="/vets/new">Add new vet</a>
 {% endblock %}

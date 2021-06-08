@@ -2,14 +2,17 @@
 
 {% block content %}
     {% for owner in owners %}
-    <section>
-        <p>Name: {{owner.first_name}} {{owner.last_name}}</p>
-        <p>Address: {{owner.address}}</p>
-        <p>Contact no: {{owner.contact_number}}</p>
-        <p>Email: {{owner.email}}</p>
-        <br>
-        <a href="/owners/{{owner.id}}">More Info</a>
-        <a href="/owners/{{owner.id}}/edit">Edit this Info</a>
+    <section class="info">
+        <div>
+            <p>Name: {{owner.first_name}} {{owner.last_name}}</p>
+            <p>Address: {{owner.address}}</p>
+            <p>Contact no: {{owner.contact_number}}</p>
+            <p>Email: {{owner.email}}</p>
+        </div>
+        <div>
+            <a href="/owners/{{owner.id}}">More Info</a>
+            <a href="/owners/{{owner.id}}/edit">Edit this Info</a>
+        </div>
     </section>
     {% endfor %}
 {% endblock %}
