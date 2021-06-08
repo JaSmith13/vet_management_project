@@ -1,5 +1,7 @@
 from db.run_sql import run_sql
 from models.owner import Owner
+from models.pet import Pet
+from repositories import vet_repository
 
 #Read all
 def select_all():
@@ -47,3 +49,17 @@ def update(owner):
     sql = "UPDATE owners SET (first_name, last_name, contact_number, address, email) = (%s, %s, %s, %s, %s) WHERE id = %s"
     values = [owner.first_name, owner.last_name, owner.contact_number, owner.address, owner.email, owner.id]
     run_sql(sql, values)
+
+#Index of pets
+def all_owners_pets(owner):
+    owners_pets = []
+    sql = "SELECT * FROM pets WHERE owner_id = %s"
+    values = [owner.id]
+    results = run_sql(sql, values)
+
+    for row in results:
+        vet = vet_repository.select(row['vet_id'])
+        owner = owner
+        pet = Pet(row['name'], row['date_of_birth'], row['breed'], owner, row['treatment_notes'], vet, row['id'])
+        owners_pets.append(pet)
+    return owners_pets
