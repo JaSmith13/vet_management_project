@@ -4,6 +4,12 @@ from models.owner import Owner
 
 owners_blueprint = Blueprint("owners", __name__)
 
+#INDEX
+@owners_blueprint.route("/owners", methods=['GET'])
+def all_owners():
+    owners = owner_repository.select_all()
+    return render_template("owners/index.html", owners = owners)
+
 #SHOW
 @owners_blueprint.route("/owners/<id>", methods=['GET'])
 def single_owner_records(id):

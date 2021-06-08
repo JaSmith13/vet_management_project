@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% for owner in owners %}
+    <section>
+        <p>Name: {{owner.first_name}} {{owner.last_name}}</p>
+        <p>Address: {{owner.address}}</p>
+        <p>Contact no: {{owner.contact_number}}</p>
+        <p>Email: {{owner.email}}</p>
+        <br>
+        <a href="/owners/{{owner.id}}/edit">Edit this Info</a>
+    </section>
+    {% endfor %}
+{% endblock %}
