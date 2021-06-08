@@ -12,6 +12,10 @@ header > p {
     margin: 0px;
 }
 
+main{
+    /* padding-left: 5px; */
+}
+
 ul{
     margin: 0px;
 }
@@ -60,11 +64,6 @@ nav > ul > li > a:hover{
     transition-duration: 0.2s;
 }
 
-.owners_pet_links{
-    color: #9E90FF;
-    /* text-align: left; */
-}
-
 footer {
 text-align: center;
 padding: 10px;
@@ -74,9 +73,13 @@ h3{
     margin: 0;
 }
 
-.inactive_vet{
-    background-color: #FF3B3F; opacity: 0.5;
+.vet{
+    padding-left: 10px;
+}
 
+.inactive_vet{
+    background-color: #FF3B3F; 
+    opacity: 0.5;
 }
 
 .info{
@@ -98,7 +101,6 @@ h3{
 #owners_pets_container{
     display: flex;
     flex-direction: column;
-    font-size: smaller;
     padding: 5px; 
 }
 
@@ -108,5 +110,15 @@ h3{
 
 #owner_delete_warning{
     font-size: smaller;
-    text-align: center;
+    text-align: left;
+}
+
+.owners_pet_links{
+    color: #9E90FF;
+    font-size: 12px;
+    /* text-align: left; */
+}
+
+.edit_vet_link{
+    justify-content: space-around; 
 }
