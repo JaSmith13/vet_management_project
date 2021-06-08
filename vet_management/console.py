@@ -7,8 +7,8 @@ from models.owner import Owner
 from repositories import vet_repository, pet_repository, owner_repository
 
 
-#pet_repository.delete_all()
-#vet_repository.delete_all()
+pet_repository.delete_all()
+vet_repository.delete_all()
 #owner_repository.delete_all()
 #vets = vet_repository.select_all()
 
@@ -28,6 +28,9 @@ from repositories import vet_repository, pet_repository, owner_repository
 
 new_vet = Vet('Bob', 'Belcher', 'grill cook', '01224 643827')
 vet_repository.save(new_vet)
+
+new_vet.first_name = 'Linda'
+vet_repository.update(new_vet)
 
 # owner1 = Owner('Bob', 'Barker', '01224 345678', '1 Wheel of fortune road', 'email@definitelyanemailclient.com')
 # owner_repository.save(owner1)

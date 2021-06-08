@@ -43,4 +43,7 @@ def save(vet):
     vet.id = id
 
 #Update
-# def update(vet):
+def update(vet):
+    sql = "UPDATE vets SET(first_name, last_name, qualifications, contact_number) = (%s, %s, %s, %s) WHERE id = %s"
+    values = [vet.first_name, vet.last_name, vet.qualifications, vet.contact_number, vet.id]
+    run_sql(sql, values)
