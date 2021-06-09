@@ -29,6 +29,10 @@ nav{
     padding: 5px;
 }
 
+main > h3{
+    margin-left: 10px;
+}
+
 a{
     border: 2px solid #9E90FF; 
     border-radius: 15%;
@@ -39,7 +43,8 @@ a{
 }
 
 a:hover{
-    color: #5a191a;
+    color: #494179;
+    border-color: #494179;
     transition-duration: 0.2s;
 }
 
@@ -107,6 +112,10 @@ h3{
     padding: 5px; 
 }
 
+.owner_selector{
+    margin-bottom: 5px;
+}
+
 #owners_pets_container > li{
     padding: 10px;
 }
@@ -141,6 +150,12 @@ h3{
 .form * {
     width: 20%;
     padding: 4px;
+}
+
+.form *:focus{
+    outline: none;
+    border: 3px solid #9E90FF; 
+    border-radius: 10%;
 }
 
 .form > button{
