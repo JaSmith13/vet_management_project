@@ -59,6 +59,12 @@ nav > ul > li > a{
     padding: 10px;
 }
 
+nav {
+    position: -webkit-sticky;
+    position:sticky;
+    top: 0;
+}
+
 nav > ul > li > a:hover{
     color: black;
     transition-duration: 0.2s;
