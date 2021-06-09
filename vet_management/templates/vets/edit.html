@@ -3,7 +3,7 @@
 {% block content %}
 <h3>Edit vet details</h3>
 
-<form action="/vets/{{vet.id}}" method="POST">
+<form action="/vets/{{vet.id}}" method="POST" class="form">
     <label for="first_name">First Name:</label>
     <input type="text" name="first_name" value="{{vet.first_name}}">
     <label for="last_name">Last Name:</label>
@@ -12,8 +12,10 @@
     <input type="text" name="qualifications" value="{{vet.qualifications}}">
     <label for="contact_number">Contact no:</label>
     <input type="text" name="contact_number" value="{{vet.contact_number}}">
-    <label for="active">Is Active in practice?</label>
-    <input type="checkbox" name="active" {% if vet.is_active == True %} checked {% endif %}>
+    <div id="checkbox">
+        <label for="active">Is Active in practice?</label>
+        <input type="checkbox" name="active" {% if vet.is_active == True %} checked {% endif %}>
+    </div>
     <button type="submit">Submit</button>
 </form>
 
