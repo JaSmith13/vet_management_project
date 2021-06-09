@@ -31,22 +31,21 @@ nav{
 
 #img_container{
     background-image: url('img/background_img.jpeg');
+    background-repeat: no-repeat;
+    background-position: 20% 35%; 
 }
-/* img{
-    opacity: 50%;
-    width: 80%;
-    justify-self: center;
-    position: relative;
-    margin-left: 10%;
-} */
 
-/* #home_screen_text{
+#img_overlay{
+    height: auto;
+    width: auto;
+    background-color: rgb(235, 235, 242, 0.55);
+}
+
+#home_screen_text{
+    padding: 120px;
     font-size: larger;
-    position: absolute;
     text-align: center;
-    top: 40%;
-    left: 25%;
-} */
+}
 
 main > h3{
     margin-left: 10px;
