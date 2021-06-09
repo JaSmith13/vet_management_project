@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nobile:wght@500&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Vampiro+One&display=swap');
 
 body{
     background-color: #EFEFEF;
@@ -29,7 +28,7 @@ hgroup{
 }
 
 #logo{
-    font-family: Nobile;
+    font-family: 'Vampiro One', cursive;
     color: #9E90FF;
     opacity: 0.3; 
     position: absolute;
