@@ -12,10 +12,6 @@ header > p {
     margin: 0px;
 }
 
-main{
-    /* padding-left: 5px; */
-}
-
 ul{
     margin: 0px;
 }
@@ -127,4 +123,19 @@ h3{
 
 .edit_vet_link{
     justify-content: space-around; 
+}
+
+#new_vet_button{
+
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px
+}
+
+.form *{
+    width: 20%;
+    padding: 4px;
 }
