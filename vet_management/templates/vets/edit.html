@@ -14,7 +14,7 @@
     <input type="text" name="contact_number" value="{{vet.contact_number}}">
     <label for="active">Is Active in practice?</label>
     <input type="checkbox" name="active" {% if vet.is_active == True %} checked {% endif %}>
-    <input type="submit" value="Submit">
+    <button type="submit">Submit</button>
 </form>
 
 {% endblock %}
